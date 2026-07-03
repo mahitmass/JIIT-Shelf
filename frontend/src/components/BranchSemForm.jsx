@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { branchSemMap } from "../data/data.js";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 import JoinChatModal from "./JoinChatModal.jsx";
+import { History } from "lucide-react";
 
 const BranchSemForm = ({ mode = "navigate", onSelect }) => {
   const navigate = useNavigate();
   const [branch, setBranch] = useState("");
   const [semester, setSemester] = useState("");
   const [showChatModal, setShowChatModal] = useState(false);
+  const [lastBranch, setLastBranch] = useState("");
+  const [lastSemester, setLastSemester] = useState("");
+
+  useEffect(() => {
+    const b = localStorage.getItem("selectedBranch");
+    const s = localStorage.getItem("selectedSemester");
+    if (b && s) {
+      setLastBranch(b);
+      setLastSemester(s);
+    }
+  }, []);
 
   const handleBranchChange = (e) => {
     setBranch(e.target.value);
@@ -47,6 +59,12 @@ const BranchSemForm = ({ mode = "navigate", onSelect }) => {
     localStorage.setItem("chatHandle", handle);
     setShowChatModal(false);
     navigate(`/chat/${room}`);
+  };
+
+  const handleGoToLastVisited = () => {
+    if (lastBranch && lastSemester) {
+      navigate(`/subjects/${lastSemester}`);
+    }
   };
 
   return (
@@ -103,6 +121,17 @@ const BranchSemForm = ({ mode = "navigate", onSelect }) => {
             </button>
           )}
         </div>
+
+        {mode !== "sg" && lastBranch && lastSemester && (
+          <button
+            type="button"
+            className="last-visited-btn"
+            onClick={handleGoToLastVisited}
+          >
+            <History size={18} />
+            Go to Last Visited: {lastBranch} (Sem {lastSemester})
+          </button>
+        )}
       </form>
 
       {showChatModal && (
