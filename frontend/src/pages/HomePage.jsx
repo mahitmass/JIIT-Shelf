@@ -28,7 +28,7 @@ const HomePage = () => {
         <div id="hero-3">
           <ExamCountdown targetDate="2026-07-23T09:00:00" />
           <a
-            href="https://drive.google.com/file/d/1SRVkiEAD3xdWSQCemtTL_eCm_tWd78eQ/view?usp=sharing"
+            href="https://drive.google.com/file/d/1KUMLMqzIXm_IXX9PiZX5uPDNzWZ3Ct8A/view?usp=drive_link"
             target="_blank"
             title="Download"
             id="ac"
