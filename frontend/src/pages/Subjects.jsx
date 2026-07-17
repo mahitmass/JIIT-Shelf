@@ -46,10 +46,10 @@ const Subjects = () => {
       try {
         const res = await api.get(`/drive/${folderId}`);
 
-        const fetchedSubjects = res.data.map((file) => ({
+        const fetchedSubjects = Array.isArray(res.data) ? res.data.map((file) => ({
           id: file.id,
           name: file.name,
-        }));
+        })) : [];
 
         setSubjects(fetchedSubjects);
 
