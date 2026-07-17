@@ -10,7 +10,7 @@ const TrendingSubjects = () => {
     const fetchTrending = async () => {
       try {
         const res = await api.get("/stats/trending-today");
-        setSubjects(res.data || []);
+        setSubjects(Array.isArray(res.data) ? res.data : []);
       } catch (err) {
         console.error("Failed to load trending:", err);
       } finally {
