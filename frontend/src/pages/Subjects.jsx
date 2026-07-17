@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation } from "react-router";
 import Footer from "../components/Footer";
 import SubjectCard from "../components/SubjectCard";
 import api from "../lib/axios.js";
-import { semIdMap } from "../data/data.js";
+import { getSemFolderId } from "../data/data.js";
 import toast from "react-hot-toast";
 import { parseSubjectName } from "../lib/utils.js";
 
@@ -28,7 +28,7 @@ const Subjects = () => {
   useEffect(() => {
     if (!sem) return;
 
-    const cacheKey = `subjects_${sem}`;
+    const cacheKey = `subjects_${branch}_${sem}`;
     const cached = localStorage.getItem(cacheKey);
 
     if (cached) {
@@ -37,7 +37,7 @@ const Subjects = () => {
     }
 
     const fetchSubjects = async () => {
-      const folderId = semIdMap[sem];
+      const folderId = getSemFolderId(branch, sem);
       if (!folderId) {
         setSubjects([]);
         setLoading(false);
