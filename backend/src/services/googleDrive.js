@@ -4,17 +4,30 @@ dotenv.config();
 
 const SCOPES = ["https://www.googleapis.com/auth/drive.readonly"];
 
-const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
+let drive = null;
 
-const auth = new google.auth.GoogleAuth({
-  credentials,
-  scopes: SCOPES,
-});
-
-const drive = google.drive({ version: "v3", auth });
+try {
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_KEY) {
+    const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
+    const auth = new google.auth.GoogleAuth({
+      credentials,
+      scopes: SCOPES,
+    });
+    drive = google.drive({ version: "v3", auth });
+  } else {
+    console.warn("⚠️ GOOGLE_SERVICE_ACCOUNT_KEY is missing from .env! Drive integration is disabled locally.");
+  }
+} catch (err) {
+  console.error("⚠️ Failed to parse GOOGLE_SERVICE_ACCOUNT_KEY. Is it valid JSON?", err.message);
+}
 
 export async function listFolderContents(id) {
   try {
+    if (!drive) {
+      console.warn("Drive integration disabled. Returning empty list for folder:", id);
+      return [];
+    }
+
     const meta = await drive.files.get({
       fileId: id,
       fields: "id, name, mimeType",
