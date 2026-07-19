@@ -13,14 +13,29 @@ const Footer = () => {
         </svg>
         for{" "}JIITians
       </p>
-      <a
-        href="https://github.com/SaatvikChauhan/JIIT-Shelf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="footer-github"
-      >
+      <div className="footer-github-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <Github className="icon-dim" />
-      </a>
+        <select 
+          onChange={(e) => {
+            if (e.target.value) window.open(e.target.value, '_blank', 'noopener,noreferrer');
+            e.target.value = ''; // reset after selection
+          }}
+          style={{
+            background: 'transparent',
+            color: 'inherit',
+            border: '1px solid var(--border)',
+            borderRadius: '4px',
+            padding: '2px 4px',
+            fontSize: '0.85rem',
+            cursor: 'pointer'
+          }}
+          defaultValue=""
+        >
+          <option value="" disabled>GitHub Repos</option>
+          <option value="https://github.com/SaatvikChauhan/JIIT-Shelf">Original</option>
+          <option value="https://github.com/mahitmass">ECE Sem 3</option>
+        </select>
+      </div>
     </footer>
   );
 };
