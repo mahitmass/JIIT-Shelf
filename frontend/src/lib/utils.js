@@ -34,16 +34,24 @@ export function parseYouTubeText(text) {
 
   const arr = [];
 
-  for (let i = 0; i < lines.length; i += 3) {
-    const title = lines[i] || "Unknown Channel";
-    const link = lines[i + 1] || "";
-    const logo = lines[i + 2] || "";
+  let i = 0;
+  while (i < lines.length) {
+    const title = lines[i];
+    let link = "";
+    let logo = "";
 
-    arr.push({
-      title,
-      link,
-      logo,
-    });
+    i++;
+    if (i < lines.length && lines[i].startsWith("http")) {
+      link = lines[i];
+      i++;
+    }
+    // Check if there is an old 3rd line (logo) and swallow it so it doesn't break parsing
+    if (i < lines.length && lines[i].startsWith("http") && !lines[i].includes("youtube.com") && !lines[i].includes("youtu.be")) {
+      logo = lines[i];
+      i++;
+    }
+
+    arr.push({ title, link, logo });
   }
 
   return arr;
