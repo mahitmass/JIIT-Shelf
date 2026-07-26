@@ -47,7 +47,10 @@ function Youtube({ fileId }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <YoutubeIcon className="icon-detail" style={{ marginRight: '12px' }} />
+              <div
+                className="yt-logo"
+                style={{ backgroundImage: `url('${ch.logo}')` }}
+              ></div>
               {ch.title}
             </a>
           ))
