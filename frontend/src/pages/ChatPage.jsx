@@ -9,7 +9,9 @@ import MessageList from "../components/chat/MessageList";
 import ChatInput from "../components/chat/ChatInput";
 import DeleteModal from "../components/chat/DeleteModal";
 
-const socket = io(import.meta.env.VITE_API_URL);
+const socket = io(import.meta.env.VITE_API_URL || "", {
+  transports: ["websocket", "polling"], // prefer WebSocket (works on Render)
+});
 
 const ChatPage = () => {
   const navigate = useNavigate();
