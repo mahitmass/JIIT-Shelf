@@ -21,8 +21,8 @@ const Footer = () => {
             e.target.value = ''; // reset after selection
           }}
           style={{
-            background: 'transparent',
-            color: 'inherit',
+            background: 'var(--background)',
+            color: 'var(--text)',
             border: '1px solid var(--border)',
             borderRadius: '4px',
             padding: '2px 4px',
