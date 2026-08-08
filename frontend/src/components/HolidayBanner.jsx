@@ -43,13 +43,11 @@ const HolidayBanner = () => {
 
   return (
     <div className="holiday-banner">
-      <Sparkles className="banner-icon" size={16} />
       <span>
         {holiday.status === "tomorrow"
           ? `Tomorrow is ${holiday.name}!`
           : `${holiday.name} is going on!`}
       </span>
-      <Sparkles className="banner-icon" size={16} />
     </div>
   );
 };
