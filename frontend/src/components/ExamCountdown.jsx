@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Clock } from "lucide-react";
 
-const ExamCountdown = ({ targetDate }) => {
+const ExamCountdown = ({ targetDate, title }) => {
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [finished, setFinished] = useState(false);
 
@@ -15,6 +15,8 @@ const ExamCountdown = ({ targetDate }) => {
         setTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
+      
+      setFinished(false);
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -34,7 +36,7 @@ const ExamCountdown = ({ targetDate }) => {
   return (
     <div id="ecw">
       <Clock className="ecw-icon" />
-      <h2 className="ecw-heading">{finished ? "Exam Time!" : "Summer Break"}</h2>
+      <h2 className="ecw-heading">{finished ? "Exam Time!" : title || "Summer Break"}</h2>
       <div id="timer">
         {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => {
           const values = [time.days, time.hours, time.minutes, time.seconds];

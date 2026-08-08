@@ -28,7 +28,7 @@
     }
 
     .heading {
-        font-size: 57.6px;
+        font-size: 50px;
     }
 
     #small-para {
@@ -37,6 +37,10 @@
 
     #hero-1 {
         padding: 2rem 2rem;
+    }
+
+    .holiday-banner {
+        margin: 1rem 2rem 0 2rem;
     }
 
     #hero-2 {

@@ -1,0 +1,127 @@
+{
+  "exams": [
+    {
+      "title": "T1 begins in",
+      "date": "2026-08-31T09:00:00"
+    },
+    {
+      "title": "Lab Mid-Term Vivas Deadline in",
+      "date": "2026-10-12T09:00:00"
+    },
+    {
+      "title": "T2 / Mid Term begins in",
+      "date": "2026-10-12T09:00:00"
+    },
+    {
+      "title": "End Sem Lab Vivas Deadline in",
+      "date": "2026-11-21T09:00:00"
+    },
+    {
+      "title": "End Semester Exam begins in",
+      "date": "2026-12-01T09:00:00"
+    },
+    {
+      "title": "Even Semester begins in",
+      "date": "2027-01-04T09:00:00"
+    },
+    {
+      "title": "T1 (Even Sem) begins in",
+      "date": "2027-02-08T09:00:00"
+    },
+    {
+      "title": "T2 / Mid Term (Even Sem) begins in",
+      "date": "2027-03-29T09:00:00"
+    },
+    {
+      "title": "End Semester Exam (Even Sem) begins in",
+      "date": "2027-05-14T09:00:00"
+    }
+  ],
+  "holidays": [
+    {
+      "name": "Independence Day",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-15"
+    },
+    {
+      "name": "Rakshabandhan",
+      "startDate": "2026-08-28",
+      "endDate": "2026-08-28"
+    },
+    {
+      "name": "Janmashtami",
+      "startDate": "2026-09-04",
+      "endDate": "2026-09-04"
+    },
+    {
+      "name": "Gandhi Jayanti",
+      "startDate": "2026-10-02",
+      "endDate": "2026-10-02"
+    },
+    {
+      "name": "Dusshera",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-20"
+    },
+    {
+      "name": "Mid-semester break (Diwali)",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-11"
+    },
+    {
+      "name": "Guru Nanak Jayanti",
+      "startDate": "2026-11-24",
+      "endDate": "2026-11-24"
+    },
+    {
+      "name": "Winter Vacation",
+      "startDate": "2026-12-15",
+      "endDate": "2027-01-03"
+    },
+    {
+      "name": "Republic day",
+      "startDate": "2027-01-26",
+      "endDate": "2027-01-26"
+    },
+    {
+      "name": "Maha Shivratri",
+      "startDate": "2027-03-06",
+      "endDate": "2027-03-06"
+    },
+    {
+      "name": "Mid-semester break (Holi)",
+      "startDate": "2027-03-19",
+      "endDate": "2027-03-25"
+    },
+    {
+      "name": "Eid-Ul-Fitr",
+      "startDate": "2027-03-09",
+      "endDate": "2027-03-09"
+    },
+    {
+      "name": "Ambedkar Jayanti",
+      "startDate": "2027-04-14",
+      "endDate": "2027-04-14"
+    },
+    {
+      "name": "Ram Navami",
+      "startDate": "2027-04-15",
+      "endDate": "2027-04-15"
+    },
+    {
+      "name": "Mahavir Jayanti",
+      "startDate": "2027-04-19",
+      "endDate": "2027-04-19"
+    },
+    {
+      "name": "Budh Purnima",
+      "startDate": "2027-05-20",
+      "endDate": "2027-05-20"
+    },
+    {
+      "name": "Summer Vacation",
+      "startDate": "2027-05-27",
+      "endDate": "2027-07-26"
+    }
+  ]
+}
