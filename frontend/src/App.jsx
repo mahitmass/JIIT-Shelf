@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 import HomePage from "./pages/HomePage";
 import Subjects from "./pages/Subjects";
@@ -112,6 +113,8 @@ const App = () => {
         <Route path="/sgestimator" element={<SGEstimator />} />
         <Route path="/chat/:room" element={<ChatPage />} />
       </Routes>
+
+      <Analytics />
     </div>
   );
 };
